@@ -1,7 +1,7 @@
 import type { Plugin } from ".."
 const templates: Map<string, string> = new Map();
 const TemplatePlugin: Plugin = [
-    /^#define\s(\w+)\s(.+)$/,
+    /^#define\s+(\w+)\s+(.+)$/,
     (e,l)=>{
         if(e){
             templates.set(e[1], e[2]);
