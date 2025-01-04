@@ -1,5 +1,6 @@
 {
   "name": "@reglog/core",
+  "description": "reglog's router library",
   "version": "0.0.0",
   "private": false,
 
@@ -17,5 +18,11 @@
   },
   "scripts": {
     "build": "tsc && bun build.ts"
+  },
+  "license": "MIT",
+  "author": "TNTSuperMan",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/TNTSuperMan/reglog"
   }
 }
