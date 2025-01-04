@@ -1,0 +1,28 @@
+{
+  "name": "@reglog/transpiler",
+  "description": "reglog's text transpiler",
+  "version": "0.0.0",
+  "private": false,
+
+  "type": "module",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.14",
+    "bun": "^1.1.42"
+  },
+  "scripts": {
+    "build": "tsc && bun build.ts"
+  },
+  "license": "MIT",
+  "author": "TNTSuperMan",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/TNTSuperMan/reglog"
+  }
+}
