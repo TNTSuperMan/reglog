@@ -10,7 +10,7 @@ const TemplatePlugin: Plugin = [
             if(templates.has(splitted[1])){
                 const parser = new window.DOMParser();
                 return [parser.parseFromString(
-                    splitted.splice(2).reduce((e,t,i)=>e.replaceAll("%"+i, t),
+                    splitted.splice(2).reduce((e,t,i)=>e.replaceAll("%"+(i+1), t),
                     (templates.get(splitted[1])??"")),
                     "text/xml").documentElement]
             }else{
