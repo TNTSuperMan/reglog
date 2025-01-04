@@ -3,7 +3,7 @@ import type { Plugin } from "..";
 let p: HTMLParagraphElement | undefined;
 
 const ParagraphPlugin: Plugin = [
-    /\/.*/,
+    /^\/.*$/,
     (e,t)=>{
         if(!e) return [];
         if(p){
