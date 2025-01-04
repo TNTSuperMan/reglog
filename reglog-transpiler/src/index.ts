@@ -13,6 +13,6 @@ export const transpile = (code: string): HTMLElement[] => {
     const contents = [];
     for(const line of code.replace("\r","").split("\n")) //CRLF対応
         for(const plugin of plugins)
-            contents.push(...plugin[1](plugin[0].exec(line), line));
+            contents.push(...plugin[1](plugin[0].exec(line.trim()), line.trim()));
     return contents;
 }
