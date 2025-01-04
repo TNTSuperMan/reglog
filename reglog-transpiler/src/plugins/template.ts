@@ -8,7 +8,7 @@ const TemplatePlugin: Plugin = [
         }else if(/^\\\w+(\\[^\\]*)*$/.test(l)){
             const splitted = l.split("\\");
             if(templates.has(splitted[1])){
-                const parser = new DOMParser();
+                const parser = new window.DOMParser();
                 return [parser.parseFromString(templates.get(splitted[1])??"", "text/xml").documentElement]
             }else{
                 console.warn(`not found template: ${splitted[1]}`);

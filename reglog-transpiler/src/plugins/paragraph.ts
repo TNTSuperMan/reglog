@@ -9,7 +9,7 @@ const ParagraphPlugin: Plugin = [
             p.textContent += "\n" + t.substring(1);
             return [];
         }else{
-            p = document.createElement("p");
+            p = window.document.createElement("p");
             p.textContent = t.substring(1);
             return [p];
         }
