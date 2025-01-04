@@ -5,6 +5,7 @@ let p: HTMLParagraphElement | undefined;
 const ParagraphPlugin: Plugin = [
     /\/.*/,
     (e,t)=>{
+        if(!e) return [];
         if(p){
             p.textContent += "\n" + t.substring(1);
             return [];
