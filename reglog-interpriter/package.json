@@ -1,0 +1,30 @@
+{
+  "name": "@reglog/interpriter",
+  "description": "reglog's transpile-on-browser runtime",
+  "version": "0.0.0",
+  "private": false,
+
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "unpkg": "dist/index.js",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@reglog/core": "^0.0.1",
+    "@reglog/transpiler": "^0.0.1"
+  },
+  "scripts": {
+    "build": "bun run ./build.ts"
+  },
+  "license": "MIT",
+  "author": "TNTSuperMan",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/TNTSuperMan/reglog"
+  }
+}
