@@ -1,7 +1,7 @@
 import { toDOM, type VNode } from "./vnode";
 const w = window;
 
-export default (routes: {[key: string]: (()=>VNode[]) | undefined},
+export default (routes: {[key: string]: (()=>VNode[] | Promise<VNode[]>) | undefined},
     config: (HTMLElement | string)[]) => 
     new Promise(res=>
         document.readyState == "loading" ?
@@ -16,10 +16,11 @@ export default (routes: {[key: string]: (()=>VNode[]) | undefined},
         const update = () => {
             while(main?.firstChild)
                 main?.firstChild.remove();
-            main?.append(...toDOM((
+            Promise.resolve().then(e=>(
                 routes[w.location.hash||""] ??
                 routes["404"] ??
-                (()=>["Not Found!"]))()))
+                (()=>["Not Found!"]))())
+            .then(e=>main?.append(...toDOM(e)))
         }
         window.addEventListener("hashchange", update);
     })
