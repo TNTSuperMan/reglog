@@ -1,4 +1,5 @@
 import type { Plugin } from ".."
+import { VNodeFromDOM } from "../vnode";
 const templates: Map<string, string> = new Map();
 const TemplatePlugin: Plugin = [
     /^#define\s+(\w+)\s+(.+)$/,
@@ -9,10 +10,11 @@ const TemplatePlugin: Plugin = [
             const splitted = l.split("\\");
             if(templates.has(splitted[1])){
                 const parser = new window.DOMParser();
-                return [parser.parseFromString(
+                const dom = parser.parseFromString(
                     splitted.splice(2).reduce((e,t,i)=>e.replaceAll("%"+(i+1), t),
                     (templates.get(splitted[1])??"")),
-                    "text/xml").documentElement]
+                    "text/xml").documentElement
+                return VNodeFromDOM(dom)
             }else{
                 console.warn(`not found template: ${splitted[1]}`);
             }

@@ -1,6 +1,7 @@
 import type { Plugin } from "..";
+import type { VText } from "../vnode";
 
-let p: HTMLParagraphElement | undefined;
+let p: ["p", [], VText] | undefined;
 
 const ParagraphPlugin: Plugin = [
     /^\/.*$/,
@@ -10,11 +11,10 @@ const ParagraphPlugin: Plugin = [
             return [];
         }
         if(p){
-            p.textContent += "\n" + t.substring(1);
+            p[2] += "\n" + t.substring(1);
             return [];
         }else{
-            p = window.document.createElement("p");
-            p.textContent = t.substring(1);
+            p = ["p", [], t.substring(1)];
             return [p];
         }
     },
