@@ -1,0 +1,6 @@
+node_modules
+src
+.gitignore
+build.ts
+bun.lockb
+tsconfig.json

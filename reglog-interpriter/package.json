@@ -1,7 +1,7 @@
 {
   "name": "@reglog/interpriter",
   "description": "reglog's transpile-on-browser runtime",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": false,
 
   "module": "dist/index.js",
