@@ -1,7 +1,7 @@
 {
   "name": "@reglog/transpiler",
   "description": "reglog's text transpiler",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": false,
   "type": "module",
   "module": "dist/index.js",
