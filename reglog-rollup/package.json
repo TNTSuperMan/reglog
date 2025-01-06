@@ -1,0 +1,29 @@
+{
+  "name": "@reglog/plugin-rollup",
+  "description": "reglog's transpiler for rollup for ssg",
+  "version": "0.0.0",
+  "private": false,
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "bun": "^1.1.42",
+    "rollup": "^4.30.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "license": "MIT",
+  "author": "TNTSuperMan",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/TNTSuperMan/reglog"
+  },
+  "scripts": {
+    "build": "tsc && bun run build.ts"
+  },
+  "dependencies": {
+    "@reglog/transpiler": "^0.0.1"
+  }
+}
