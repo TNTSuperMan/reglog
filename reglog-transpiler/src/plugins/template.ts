@@ -14,7 +14,7 @@ const TemplatePlugin: Plugin = [
                     splitted.splice(2).reduce((e,t,i)=>e.replaceAll("%"+(i+1), t),
                     (templates.get(splitted[1])??"")),
                     "text/xml").documentElement
-                return VNodeFromDOM(dom)
+                return [VNodeFromDOM(dom)]
             }else{
                 console.warn(`not found template: ${splitted[1]}`);
             }
