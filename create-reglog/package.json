@@ -1,0 +1,15 @@
+{
+  "name": "create-reglog",
+  "version": "0.0.0",
+  "description": "create reglog template",
+  "main": "index.js",
+  "author": "TNTSuperMan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/TNTSuperMan/reglog"
+  },
+  "bin": {
+    "create-reglog": "index.js"
+  }
+}
