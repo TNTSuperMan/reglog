@@ -2,6 +2,7 @@ import ParagraphPlugin from "./plugins/paragraph";
 import TemplatePlugin from "./plugins/template";
 import type { VNode } from "./vnode";
 
+export type { VNode, VText, VElement } from "./vnode"
 export type Plugin = [RegExp, (res: RegExpExecArray | null, raw: string)=>VNode[], ()=>void]
 const plugins: Plugin[] = [
     TemplatePlugin,
