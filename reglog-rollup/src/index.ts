@@ -1,13 +1,16 @@
-import { transpile } from "@reglog/transpiler"
-import type { Plugin } from "rollup"
+import { addPlugins, transpile, type Plugin } from "@reglog/transpiler"
+import type { Plugin as RollupPlugin } from "rollup"
 
-export const RollupPluginReglog: Plugin = {
-    name: "@reglog/plugin-rollup",
-    transform(code, id){
-        if(/\.rlg$/.test(id)){
-            return {
-                code: "export default " + JSON.stringify(transpile(code)),
-                map: null
+export const RollupPluginReglog = (plugins: Plugin[]): RollupPlugin =>{
+    addPlugins(...plugins);
+    return{
+        name: "@reglog/plugin-rollup",
+        transform(code, id){
+            if(/\.rlg$/.test(id)){
+                return {
+                    code: "export default " + JSON.stringify(transpile(code)),
+                    map: null
+                }
             }
         }
     }
