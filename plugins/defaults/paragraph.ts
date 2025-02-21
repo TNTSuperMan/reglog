@@ -1,5 +1,5 @@
-import type { Plugin } from "..";
-import type { VText } from "../vnode";
+import type { Plugin } from "../../reglog-transpiler/src";
+import type { VText } from "../../reglog-transpiler/src/vnode";
 
 let p: ["p", [], VText] | undefined;
 

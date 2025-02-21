@@ -1,5 +1,5 @@
-import type { Plugin } from ".."
-import { VNodeFromDOM } from "../vnode";
+import type { Plugin } from "../../reglog-transpiler/src"
+import { VNodeFromDOM } from "../../reglog-transpiler/src/vnode";
 const templates: Map<string, string> = new Map();
 const TemplatePlugin: Plugin = [
     /^#define\s+(\w+)\s+(.+)$/,
