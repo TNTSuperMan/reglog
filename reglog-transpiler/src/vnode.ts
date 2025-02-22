@@ -1,5 +1,5 @@
 export type VNode = VElement | VText;
-export type VElement = [string, [string, string][], ...VNode[]] | VText;
+export type VElement = [string, [string, string][], ...VNode[]];
 export type VText = string;
 
 export const VNodeFromDOM = (dom: ChildNode): VNode => {
