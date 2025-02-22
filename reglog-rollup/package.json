@@ -1,7 +1,7 @@
 {
   "name": "@reglog/plugin-rollup",
   "description": "reglog's transpiler for rollup for ssg",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "private": false,
   "module": "dist/index.js",
   "main": "dist/index.js",
@@ -25,6 +25,6 @@
     "build": "tsc && bun run build.ts"
   },
   "dependencies": {
-    "@reglog/transpiler": "^0.0.1"
+    "@reglog/transpiler": "^0.0.4"
   }
 }
