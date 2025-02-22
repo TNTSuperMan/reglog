@@ -1,26 +1,21 @@
 import { toDOM, type VNode } from "./vnode";
 const w = window;
 
-export default (routes: {[key: string]: (()=>VNode[] | Promise<VNode[]>) | undefined},
-    config: (HTMLElement | string)[]) => 
+export default (root: HTMLElement, routes: {[key: string]: (()=>VNode[] | Promise<VNode[]>) | undefined}) => 
     new Promise(res=>
         document.readyState == "loading" ?
             document.addEventListener(
                 "DOMContentLoaded", res):
             res(0))
     .then(e=>{
-        let main: HTMLElement | undefined;
-        config.forEach(e=>document.body.appendChild(
-            typeof e == "string" ?
-                main = w.document.createElement(e) : e))
         const update = () => {
-            while(main?.firstChild)
-                main?.firstChild.remove();
+            while(root?.firstChild)
+                root?.firstChild.remove();
             Promise.resolve().then(e=>(
                 routes[w.location.hash||""] ??
                 routes["404"] ??
                 (()=>["Not Found!"]))())
-            .then(e=>main?.append(...toDOM(e)))
+            .then(e=>root?.append(...toDOM(e)))
         }
         window.addEventListener("hashchange", update);
     })
