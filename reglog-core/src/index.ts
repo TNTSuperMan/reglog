@@ -18,4 +18,5 @@ export default (root: HTMLElement, routes: {[key: string]: (()=>VNode[] | Promis
             .then(e=>root.append(...toDOM(e)))
         }
         window.addEventListener("hashchange", update);
+        update();
     })
