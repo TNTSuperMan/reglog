@@ -11,10 +11,10 @@ export default (root: HTMLElement, id: () => string, onupdate: (ev: () => void) 
         const update = () => {
             while(root.firstChild)
                 root.firstChild.remove();
-            new Promise<VNode[]>(e=>(
+            new Promise<VNode[]>(e=>e((
                 routes[id()] ??
                 routes["404"] ??
-                (()=>["Not Found!"]))())
+                (()=>["Not Found!"]))()))
             .then(e=>root.append(...toDOM(e)))
         }
         onupdate(update);
