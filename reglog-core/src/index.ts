@@ -11,7 +11,7 @@ export default (root: HTMLElement, routes: {[key: string]: (()=>VNode[] | Promis
         const update = () => {
             while(root.firstChild)
                 root.firstChild.remove();
-            Promise.resolve().then(e=>(
+            new Promise<VNode[]>(e=>(
                 routes[w.location.hash||""] ??
                 routes["404"] ??
                 (()=>["Not Found!"]))())
