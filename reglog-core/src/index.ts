@@ -7,7 +7,7 @@ export default (root: HTMLElement, id: () => string, onupdate: (ev: () => void) 
             document.addEventListener(
                 "DOMContentLoaded", res):
             res(0))
-    .then(e=>{
+    .then(()=>{
         const update = () => {
             while(root.firstChild)
                 root.firstChild.remove();
